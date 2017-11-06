@@ -45,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         mSubject = (EditText) findViewById(R.id.subject);
         mParagraph = (EditText) findViewById(R.id.paragraph);
 
+        statusToast = new Toast(getApplicationContext());
+
         setListeners();
     }
 
@@ -150,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
             }
             else
                 toastText = "Error al enviar mail";
+            statusToast.cancel();
             statusToast = Toast.makeText(context, toastText, Toast.LENGTH_SHORT);
             statusToast.show();
         }
